@@ -10,7 +10,14 @@
 
 NIVARA is a disaster-management decision-support platform that combines **multi-hazard risk assessment, population vulnerability, evacuation priority, safe relocation, carrying capacity, and authority action** in one unified workflow.
 
-It is designed to help authorities understand **where the risk is, who is affected, where people can be relocated, and what action is required.**
+It helps authorities understand **where the risk is, who is affected, where people can be relocated, and what action is required.**
+
+---
+
+▶ **Live Website**
+
+🌐 **NIVARA:**
+https://nivara-hrc.netlify.app/#/login
 
 ---
 
@@ -94,23 +101,6 @@ Authority Action
 
 ---
 
-▶ **Quick Start**
-
-```bash
-git clone <YOUR_REPOSITORY_URL>
-cd NIVARA
-npm install
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000/
-```
-
----
-
 ▶ **Project Structure**
 
 ```text
@@ -147,4 +137,3 @@ Risk results, relocation recommendations, and capacity estimates should be valid
 ---
 
 **NIVARA — From Risk Intelligence to Resilient Action.**
-
