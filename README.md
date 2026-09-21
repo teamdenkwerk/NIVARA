@@ -1,130 +1,150 @@
+# 🌍 NIVARA
 
-🌲 NIVARA — Automated Multi-Hazard Risk & Resilient Relocation Intelligence Platform
+**Automated Multi-Hazard Risk & Resilient Relocation Intelligence Platform**
 
+> **Risk → People → Priority → Safe Place → Capacity → Action**
 
-🏛️ Project Architecture Overview
+---
 
-NIVRA/
-│
-├── frontend/                 # Complete React 18 + Vite + TypeScript + Tailwind UI
-│   ├── public/               # Static GeoJSON, cached datasets & icons
-│   ├── src/
-│   │   ├── components/       # Modular UI components
-│   │   │   ├── common/       # Header, Sidebar, Footer, StatCards, Chatbot
-│   │   │   ├── map/          # Interactive Leaflet GIS mapping engine
-│   │   │   ├── capacity/     # Sphere Standards carrying capacity calculators
-│   │   │   ├── geotechnical/ # Mohr-Coulomb soil moisture & liquefaction hub
-│   │   │   ├── search/       # Instant global categorical search dropdown
-│   │   │   ├── modals/       # Multi-hazard detailed dossier & evidence modals
-│   │   │   └── risk/         # Factor breakdown & confidence visualizers
-│   │   ├── pages/            # 14 Full Dashboard views & Decision Workspaces
-│   │   ├── context/          # Global application state (AppContext)
-│   │   ├── services/         # Live Open-Meteo weather & Bayesian inference
-│   │   ├── utils/            # Capacity solvers & bottleneck algorithms
-│   │   ├── data/             # Static area hazard profiles & site registries
-│   │   ├── types/            # Complete TypeScript interfaces
-│   │   ├── App.tsx           # Main application router
-│   │   └── main.tsx          # React application entry point
-│   ├── package.json
-│   ├── vite.config.ts
-│   ├── tsconfig.json
-│   └── tailwind.config.js
-│
-├── backend/                  # Server-Side APIs & Microservice Controllers
-│   ├── app/
-│   │   ├── api/              # API endpoints
-│   │   ├── routes/           # Hazard, capacity, and weather routes
-│   │   ├── controllers/      # Command dispatchers
-│   │   ├── services/         # Open-Meteo & InSAR telemetry proxies
-│   │   └── config/           # Server settings & CORS configuration
-│   ├── requirements.txt
-│   └── README.md
-│
-├── ml/                       # Machine Learning & Bayesian Layer
-│   ├── data/                 # Training and processed feature sets
-│   ├── models/               # XGBoost weights & Bayesian posterior JSONs
-│   ├── training/             # train_xgboost.py (94.10% CV Accuracy)
-│   ├── prediction/           # bayesian_risk_inference.py (Beta-Logit with 95% CIs)
-│   ├── evaluation/           # evaluate_models.py (Multi-model benchmarks)
-│   ├── requirements.txt
-│   └── README.md
-│
-├── datasets/                 # Unified Project Data Repositories
-│   ├── raw/                  # 16 official government CSV registers (Census, DEM, IMD, GSI)
-│   ├── processed/            # data.json (1.7 MB master database), bayesian_risk.json
-│   ├── gis/                  # cadastral_parcels.geojson (1,000 parcel polygons)
-│   ├── rainfall/             # IMD precipitation time series & summaries
-│   ├── population/           # Census 2011 gender-disaggregated records
-│   ├── soil/                 # Soil saturation & moisture matrices
-│   └── elevation/            # 30m ALOS PALSAR DEM slope & elevation points
-│
-├── gis/                      # Spatial GIS Boundary & Polygon Repositories
-│   ├── boundaries/           # Official administrative village boundaries
-│   ├── geojson/              # Cadastral parcels and runout polygons
-│   └── processing/           # Geospatial overlay and buffer tools
-│
-├── scripts/                  # Data Pipelines & Setup Automation
-│   ├── data/
-│   │   └── build_data.py     # Master data ingestion generator
-│   ├── setup/                # Migration and installation utilities
-│   └── deployment/           # Production build and startup scripts
-│
-├── docs/                     # Engineering & Scientific Documentation
-│   ├── architecture/         # SYSTEM_ARCHITECTURE.md
-│   ├── ml/                   # ML_METHODOLOGY.md
-│   ├── gis/                  # GIS_SPECIFICATION.md
-│   └── api/                  # API_REFERENCE.md
-│
-├── tests/                    # Automated Test Suites
-│   ├── frontend/             # Component and UI tests
-│   └── ml/                   # Model validation and data integrity tests
-│
-├── .env.example              # Environment variable template
-├── .gitignore                # Git ignore configuration
-└── package.json              # Root script runner delegating to frontend/
+▶ **About**
+
+NIVARA is a disaster-management decision-support platform that combines **multi-hazard risk assessment, population vulnerability, evacuation priority, safe relocation, carrying capacity, and authority action** in one unified workflow.
+
+It is designed to help authorities understand **where the risk is, who is affected, where people can be relocated, and what action is required.**
+
+---
+
+▶ **Key Features**
+
+• 🔴 Multi-hazard risk assessment
+• 👥 Population & vulnerability analysis
+• 🚨 Priority evacuation
+• 🏠 Safe relocation analysis
+• 🏗️ Carrying-capacity assessment
+• 🗺️ Interactive GIS maps
+• 📢 Emergency voice alerts
+• 📄 Automated PDF reports
+• 🤖 Explainable AI assistance
+• 🎮 Disaster scenario simulation
+
+---
+
+▶ **Supported Hazards**
+
+🏔️ **Landslide** — Meppadi, Wayanad, Kerala
+🌊 **Flood** — Dibrugarh, Assam
+⛈️ **Cloudburst & Extreme Rainfall** — Kedarnath, Uttarakhand
+🌊 **Coastal Erosion** — Brahmapur Coast, Ganjam, Odisha
+
+---
+
+▶ **Decision Pipeline**
+
+```text
+01. Red Zone Update
+        ↓
+02. Priority Evacuation
+        ↓
+03. Safe Relocation
+        ↓
+04. Authority Insights
+        ↓
+05. Simulator
 ```
 
 ---
 
-⚡ Quick Start & Commands
+▶ **Technology Stack**
 
-1. Run the Frontend Development Server:
+**Frontend:** React, TypeScript, Vite, Tailwind CSS, Leaflet
+
+**Backend:** Python, FastAPI
+
+**Data & GIS:** Pandas, NumPy, GeoJSON, GeoPandas, Shapely
+
+**AI / ML:** XGBoost, Bayesian Risk Analysis, Gemini
+
+**External Services:** Open-Meteo, SMAP, Twilio
+
+**Reports:** jsPDF, html2canvas
+
+---
+
+▶ **System Workflow**
+
+```text
+Data Sources
+     ↓
+Data Processing
+     ↓
+Hazard Assessment
+     ↓
+Risk & Vulnerability
+     ↓
+Population Exposure
+     ↓
+Evacuation Priority
+     ↓
+Safe Relocation
+     ↓
+Carrying Capacity
+     ↓
+Authority Action
+```
+
+---
+
+▶ **Quick Start**
+
 ```bash
-# Run directly from root (or inside frontend/)
+git clone <YOUR_REPOSITORY_URL>
+cd NIVARA
+npm install
 npm run dev
 ```
-Open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
-2. Build for Production:
-```bash
-npm run build
-```
+Then open:
 
-3. Re-generate Datasets from Raw CSVs:
-```bash
-python scripts/data/build_data.py
-```
-
-4. Train Machine Learning Models:
-```bash
-# Train XGBoost Classifier (120 Trees, 94.10% CV Accuracy)
-python ml/training/train_xgboost.py
-
-# Run Bayesian Beta-Logit Inference
-python ml/prediction/bayesian_risk_inference.py
+```text
+http://localhost:3000/
 ```
 
 ---
 
-🔬 Multi-Model Triangulation Framework
+▶ **Project Structure**
 
-1. **Hazard Risk Index (HRI 0–100)**: Multi-criteria weighted score for legal cadastral red-zone demarcation.
-2. **Bayesian Posterior Probability ($P \in [0, 1]$)**: Beta prior updating with **95% Credible Intervals** ($79\%–93\%$) to eliminate false alarms.
-3. **XGBoost Classifier (v3.4.1)**: Empirical ML validation achieving $94.10\%$ 5-Fold Cross-Validation Accuracy.
-4. **Mohr-Coulomb Factor of Safety ($\text{FoS}$)**: Dynamic soil pore water pressure liquefaction calculator.
-5. **Sphere Standards CCAS Solver**: Weakest-link bottleneck calculation for emergency land carrying capacity.
+```text
+NIVARA/
+├── frontend/
+├── backend/
+├── ml/
+├── datasets/
+├── gis/
+├── scripts/
+├── docs/
+└── tests/
+```
 
 ---
 
-👥 Authors & Recognition.  
-*Team DenkWerk — Transforming Disaster Risk into Resilient Action.*
+▶ **Responsible Use**
+
+NIVARA is a **decision-support system**, not a replacement for official emergency authorities or field verification.
+
+Risk results, relocation recommendations, and capacity estimates should be validated using current official information and real-world conditions.
+
+---
+
+▶ **Future Scope**
+
+• Real-time environmental data
+• Advanced spatial processing
+• Compound-hazard analysis
+• Improved routing
+• Offline field support
+• Historical validation and uncertainty analysis
+
+---
+
+**NIVARA — From Risk Intelligence to Resilient Action.**
+
