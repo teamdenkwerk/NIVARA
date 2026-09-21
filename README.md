@@ -1,13 +1,9 @@
-# 🌲 NIVARA — Automated Multi-Hazard Risk & Resilient Relocation Intelligence Platform
 
-> **Smart India Hackathon (SIH26191) | Kerala State Disaster Management Authority (KSDMA) Decision-Support System**  
-> *Target Region: Wayanad District, Western Ghats, Kerala (Meppadi, Achooranam, Kottathara, Kuppadithara)*
+🌲 NIVARA — Automated Multi-Hazard Risk & Resilient Relocation Intelligence Platform
 
----
 
-## 🏛️ Project Architecture Overview
+🏛️ Project Architecture Overview
 
-```text
 NIVRA/
 │
 ├── frontend/                 # Complete React 18 + Vite + TypeScript + Tailwind UI
@@ -90,26 +86,26 @@ NIVRA/
 
 ---
 
-## ⚡ Quick Start & Commands
+⚡ Quick Start & Commands
 
-### 1. Run the Frontend Development Server:
+1. Run the Frontend Development Server:
 ```bash
 # Run directly from root (or inside frontend/)
 npm run dev
 ```
 Open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
-### 2. Build for Production:
+2. Build for Production:
 ```bash
 npm run build
 ```
 
-### 3. Re-generate Datasets from Raw CSVs:
+3. Re-generate Datasets from Raw CSVs:
 ```bash
 python scripts/data/build_data.py
 ```
 
-### 4. Train Machine Learning Models:
+4. Train Machine Learning Models:
 ```bash
 # Train XGBoost Classifier (120 Trees, 94.10% CV Accuracy)
 python ml/training/train_xgboost.py
@@ -120,7 +116,7 @@ python ml/prediction/bayesian_risk_inference.py
 
 ---
 
-## 🔬 Multi-Model Triangulation Framework
+🔬 Multi-Model Triangulation Framework
 
 1. **Hazard Risk Index (HRI 0–100)**: Multi-criteria weighted score for legal cadastral red-zone demarcation.
 2. **Bayesian Posterior Probability ($P \in [0, 1]$)**: Beta prior updating with **95% Credible Intervals** ($79\%–93\%$) to eliminate false alarms.
@@ -130,6 +126,5 @@ python ml/prediction/bayesian_risk_inference.py
 
 ---
 
-## 👥 Authors & Recognition
-Developed for **Smart India Hackathon (SIH 2024 - Problem ID SIH26191)**.  
-*Team NIVARA — Transforming Disaster Risk into Resilient Action.*
+👥 Authors & Recognition.  
+*Team DenkWerk — Transforming Disaster Risk into Resilient Action.*
