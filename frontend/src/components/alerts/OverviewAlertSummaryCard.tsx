@@ -22,7 +22,7 @@ export const OverviewAlertSummaryCard: React.FC = () => {
 
   const fetchSummary = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/v2/alerts');
+      const res = await fetch('/api/v2/alerts');
       if (res.ok) {
         const data = await res.json();
         setKpis(data.kpis || {});

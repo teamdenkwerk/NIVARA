@@ -253,7 +253,7 @@ export const HazardCommandCenter: React.FC = () => {
     setIsCalling(true);
     setCallStatus('Connecting to Twilio Telephony Gateway...');
     try {
-      const resp = await fetch('http://127.0.0.1:8000/api/v1/copilot/trigger-voice-call', {
+      const resp = await fetch('/api/v1/copilot/trigger-voice-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

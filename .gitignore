@@ -28,3 +28,7 @@ scratch/
 .DS_Store
 Thumbs.db
 **/.vite/
+
+# Environment secrets
+.env
+.env.*

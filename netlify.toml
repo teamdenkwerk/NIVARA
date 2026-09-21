@@ -1,0 +1,27 @@
+# ============================================================
+# NIVARA — Netlify Production Deployment Configuration
+# ============================================================
+
+[build]
+  # The base directory where package.json and vite configs are located
+  base = "frontend"
+  # Directory where the compiled assets are generated
+  publish = "dist"
+  # Production build command
+  command = "npm run build"
+
+# Single Page Application (SPA) routing
+# Resolves deep links and page refreshes to index.html with HTTP 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Recommended Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

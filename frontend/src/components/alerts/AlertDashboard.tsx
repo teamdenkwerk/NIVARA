@@ -89,14 +89,14 @@ export const AlertDashboard: React.FC = () => {
     try {
       setIsLoading(true);
       // 1. Fetch Alerts
-      const resAlerts = await fetch('http://127.0.0.1:8000/api/v2/alerts');
+      const resAlerts = await fetch('/api/v2/alerts');
       if (resAlerts.ok) {
         const data = await resAlerts.json();
         setAlerts(data.alerts || []);
       }
 
       // 2. Fetch Contacts
-      const resContacts = await fetch('http://127.0.0.1:8000/api/v2/emergency-contacts');
+      const resContacts = await fetch('/api/v2/emergency-contacts');
       if (resContacts.ok) {
         const dataContacts = await resContacts.json();
         setContacts(dataContacts.contacts || []);
@@ -238,7 +238,7 @@ export const AlertDashboard: React.FC = () => {
   const handleAcknowledge = async (alertId: string, officerName?: string) => {
     const defaultOperator = officerName || 'NIVARA Duty Officer';
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/v2/alerts/${alertId}/acknowledge`, {
+      const res = await fetch(`/api/v2/alerts/${alertId}/acknowledge`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -279,7 +279,7 @@ export const AlertDashboard: React.FC = () => {
   const handleEscalate = async (alertId: string) => {
     try {
       setEscalatingAlertId(alertId);
-      const res = await fetch(`http://127.0.0.1:8000/api/v2/alerts/${alertId}/escalate`, {
+      const res = await fetch(`/api/v2/alerts/${alertId}/escalate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -342,7 +342,7 @@ export const AlertDashboard: React.FC = () => {
   const handleDispatchSimulatedTest = async () => {
     try {
       setIsDispatchingTest(true);
-      const res = await fetch('http://127.0.0.1:8000/api/v2/alerts/test', {
+      const res = await fetch('/api/v2/alerts/test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

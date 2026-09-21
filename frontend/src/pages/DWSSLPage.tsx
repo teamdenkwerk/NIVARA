@@ -368,7 +368,7 @@ export const DWSSLPage: React.FC = () => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `http://127.0.0.1:8000/api/v2/dwssl/summary?simulated_rain_multiplier=${rainMultiplier}&decay_k=${decayK}`
+        `/api/v2/dwssl/summary?simulated_rain_multiplier=${rainMultiplier}&decay_k=${decayK}`
       );
       if (res.ok) {
         const data: DWSSLSummary = await res.json();
@@ -427,7 +427,7 @@ export const DWSSLPage: React.FC = () => {
   const fetchTimeline = async (locName: string) => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/v2/dwssl/timeline?location=${encodeURIComponent(locName)}&decay_k=${decayK}&simulated_rain_multiplier=${rainMultiplier}`
+        `/api/v2/dwssl/timeline?location=${encodeURIComponent(locName)}&decay_k=${decayK}&simulated_rain_multiplier=${rainMultiplier}`
       );
       if (res.ok) {
         const data = await res.json();
